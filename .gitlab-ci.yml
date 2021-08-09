@@ -1,0 +1,22 @@
+image: hub.ibar.az/gitlab-ci-test/openjdk:11-jdk
+
+stages:
+  - cache
+  - check_build_tests
+  - proceed
+  - sonar
+  - image-build
+  - deploy
+
+
+variables:
+  MS_NAME: it-springboot-template-ms
+  SPRING_LIQUIBASE_ENABLED: 'false'
+
+include:
+  - project: 'devops/gitops/templates'
+    ref: master
+    file: 'gitlab-ci/it_services/.cache.yml'
+  - project: 'devops/gitops/templates'
+    ref: master
+    file: 'gitlab-ci/it_services/.all.yml'
