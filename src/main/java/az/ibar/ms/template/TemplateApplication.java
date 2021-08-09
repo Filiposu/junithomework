@@ -1,4 +1,4 @@
-package az.ibar.ms.template.template;
+package az.ibar.ms.template;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-public class FlexCardReaderApplication {
+public class TemplateApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FlexCardReaderApplication.class);
+        SpringApplication.run(TemplateApplication.class);
     }
 }
