@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ContactsManagementService {
-	private Logger LOGGER  = LoggerFactory.getLogger(ContactsManagementService.class);
+	private Logger Logger  = LoggerFactory.getLogger(ContactsManagementService.class);
 
 	@Autowired
 	private CustomerContactRepository customerContactRepository;
@@ -27,7 +27,7 @@ public class ContactsManagementService {
 		try {
 			newContact = customerContactRepository.save(aContact);
 		} catch (Exception ex) {
-			LOGGER.error("Exception occured while trying to save customer contact");
+			Logger.error("Exception occured while trying to save customer contact");
 		}
 		return newContact;	
 	}

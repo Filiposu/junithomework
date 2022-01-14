@@ -20,7 +20,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -71,6 +71,14 @@ public class ContactsManagementServiceUnitTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             contactsManagementService.add(newContact);
         });
+    }
+
+    @Test
+    public void testWhenCityIsNull() {
+        CustomerContact newContact = customerContact();
+        newContact.setDeliveryAddressCity(null);
+        contactsManagementService.add(newContact);
+        verify(customerContactRepository,times(1)).save(any());
     }
 
     @Test
