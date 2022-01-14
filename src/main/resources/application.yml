@@ -7,6 +7,12 @@ spring:
     banner-mode: off
   application:
     name: springboot-template-ms
+  datasource:
+    url: jdbc:h2:./data/db
+    driver-class-name: org.h2.Driver
+    username: sa
+    data-password: password
+    platform: org.hibernate.dialect.H2Dialect
   cloud:
     kubernetes:
       enabled: true

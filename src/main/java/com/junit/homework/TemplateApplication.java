@@ -1,4 +1,4 @@
-package az.ibar.ms.template;
+package com.junit.homework;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
